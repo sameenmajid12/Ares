@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-primary: #0b1220;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1f2937;
+
+  --text-primary: #e5e7eb;
+  --text-muted: #9ca3af;
+
+  --accent-main: #2563eb;
+  --accent-good: #16a34a;
+  --accent-warn: #f59e0b;
+  --accent-bad: #dc2626;
+
+  --border-subtle: #374151;
+}
+
+html{
+  font-family:monospace;
+}
+body{
+  background-color: var(--bg-primary);
+}
+p,h1,h2,h3,h4,h5,h6{
+  margin:0;
+  color:var(--text-primary);
+}
+button{
+  font-family: monospace;
+  cursor: pointer;
+}
