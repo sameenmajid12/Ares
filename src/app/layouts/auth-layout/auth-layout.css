@@ -1,0 +1,7 @@
+.auth-wrapper{
+  width: 98vw;
+  height:98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
