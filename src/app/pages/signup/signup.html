@@ -8,20 +8,40 @@
     <div class="auth-form-wrapper">
       <div class="auth-form-item">
         <p>Email</p>
-        <input/>
+        <input
+          type="email"
+          [value]="auth.email()"
+          (input)="auth.email.set($any($event.target).value)"
+          appInputError
+          [error]="!auth.isEmailValid() && auth.touched()"
+        />
       </div>
       <div class="auth-form-item">
         <p>Password</p>
-        <input/>
+        <input
+          type="password"
+          [value]="auth.password()"
+          (input)="auth.password.set($any($event.target).value)"
+          appInputError
+          [error]="!auth.isPasswordValid() && auth.touched()"
+        />
       </div>
       <div class="auth-form-item">
         <p>Retype password</p>
-        <input/>
+        <input
+          type="password"
+          [value]="auth.retypedPassword()"
+          (input)="auth.retypedPassword.set($any($event.target).value)"
+          appInputError
+          [error]="!auth.isPasswordMatch() && auth.touched()"
+        />
       </div>
-      <hr class="line"/>
-      <button>Login</button>
+      <hr class="line" />
+      <button (click)="auth.register()">Register</button>
       <div class="has-account-message">
-        <p>Already have an account? <span routerLink="/login"><a>Login</a></span></p>
+        <p>
+          Already have an account? <span routerLink="/login"><a>Login</a></span>
+        </p>
       </div>
     </div>
   </div>
