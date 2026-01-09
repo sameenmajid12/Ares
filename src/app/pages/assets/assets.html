@@ -1,1 +1,24 @@
-<p>assets works!</p>
+<div class="asset-wrapper">
+  <div class="asset-header-wrapper">
+    <div class="asset-header">
+      <h2>Assets</h2>
+      <h4>Manage your assets here</h4>
+    </div>
+    <div class="asset-header-sort">
+      <label for="sort">Sort by: </label>
+      <select id="sort">
+        <option value="0">Most Recent</option>
+        <option value="1">Alphabetical</option>
+        <option value="2">Price High-Low</option>
+        <option value="3">Price Low-High</option>
+      </select>
+    </div>
+  </div>
+  <div class="asset-content-wrapper">
+    <app-asset-card></app-asset-card>
+    <app-asset-card></app-asset-card>
+    <app-asset-card></app-asset-card>
+    <app-asset-card></app-asset-card>
+    <app-asset-card></app-asset-card>
+  </div>
+</div>

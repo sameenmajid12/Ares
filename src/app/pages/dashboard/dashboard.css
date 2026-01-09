@@ -1,7 +1,7 @@
 .dashboard-wrapper {
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 4rem;
+  padding: var(--page-padding);
   row-gap: 2rem;
   height: 100%;
   box-sizing: border-box;

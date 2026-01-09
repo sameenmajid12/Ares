@@ -1,0 +1,38 @@
+.asset-wrapper{
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.asset-header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.asset-header h2{
+  font-size: 3rem;
+}
+.asset-header h4{
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.asset-header-sort label{
+  color:var(--text-primary);
+  font-weight: 600;
+}
+.asset-header-sort select{
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+}
+.asset-header-sort option{
+  background-color: var(--bg-primary);
+  color: var(--bg-background);
+}
+.asset-content-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
