@@ -8,16 +8,29 @@
     <div class="auth-form-wrapper">
       <div class="auth-form-item">
         <p>Email</p>
-        <input/>
+        <input
+          [value]="auth.email()"
+          (input)="auth.email.set($any($event.target).value)"
+          appInputError
+          [error]="!auth.isEmailValid() && auth.touched()"
+        />
       </div>
       <div class="auth-form-item">
         <p>Password</p>
-        <input/>
+        <input
+          type="password"
+          [value]="auth.password()"
+          (input)="auth.password.set($any($event.target).value)"
+          appInputError
+          [error]="!auth.isPasswordValid() && auth.touched()"
+        />
       </div>
-      <hr class="line"/>
-      <button>Login</button>
+      <hr class="line" />
+      <button (click)="auth.login()">Login</button>
       <div class="no-account-message">
-        <p>Don't have an account? <span routerLink="/signup"><a>Register</a></span></p>
+        <p>
+          Don't have an account? <span routerLink="/signup"><a>Register</a></span>
+        </p>
       </div>
     </div>
   </div>
