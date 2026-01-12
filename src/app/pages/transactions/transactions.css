@@ -1,0 +1,12 @@
+.transaction-header h2{
+  font-size: 2.5rem;
+}
+.transaction-header h4{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.divider{
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.151);
+}
