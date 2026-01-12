@@ -1,6 +1,6 @@
 .content-wrapper{
   display: flex;
 }
-.page-wrapper{
+.router-wrapper{
   flex:1
 }

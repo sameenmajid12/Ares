@@ -15,17 +15,29 @@
   --page-padding: 2.5rem 4rem;
 }
 
-html{
-  font-family:monospace;
+html {
+  font-family: monospace;
 }
-body{
+body {
   background-color: var(--bg-primary);
 }
-p,h1,h2,h3,h4,h5,h6{
-  margin:0;
-  color:var(--text-primary);
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--text-primary);
 }
-button{
+button {
   font-family: monospace;
   cursor: pointer;
+}
+.page-wrapper {
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }

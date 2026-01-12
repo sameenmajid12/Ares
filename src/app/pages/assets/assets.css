@@ -1,9 +1,3 @@
-.asset-wrapper{
-  padding: var(--page-padding);
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-}
 .asset-header-wrapper{
   display: flex;
   justify-content: space-between;
