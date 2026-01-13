@@ -1,7 +1,16 @@
 <div class="table-wrapper">
   <div class="table-header">
     <h5>Recent offers</h5>
-    <button>Filter<ion-icon name="chevron-down"></ion-icon></button>
+    <div class="dropdown-menu-wrapper">
+      <button (click)="toggleDropDown()">Filter<ion-icon name="chevron-down"></ion-icon></button>
+      @if(dropdownVisible()){
+      <div class="dropdown-menu">
+        <p>Recent</p>
+        <p>Bought</p>
+        <p>Sold</p>
+      </div>
+      }
+    </div>
   </div>
   <div>
     <div class="transaction-row first-row">

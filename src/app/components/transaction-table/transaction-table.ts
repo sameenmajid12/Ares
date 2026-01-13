@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
 
 @Component({
   selector: 'app-transaction-table',
@@ -8,5 +8,9 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TransactionTable {
-
+  dropdownVisible = signal(false);
+  toggleDropDown(){
+    console.log(this.dropdownVisible);
+    this.dropdownVisible.set(!this.dropdownVisible());
+  }
 }

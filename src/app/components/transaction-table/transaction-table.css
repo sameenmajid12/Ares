@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom:0.5rem;
+  padding-bottom: 0.5rem;
 }
 .table-header h5 {
   font-size: 1.375rem;
@@ -42,4 +42,30 @@
 }
 .transaction-row input {
   margin: 0;
+}
+.dropdown-menu-wrapper {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background-color: var(--bg-primary);
+  width: 10rem;
+  border: 1px solid var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.875rem;
+  overflow: hidden;
+}
+.dropdown-menu p {
+  padding: 1rem;
+  border-bottom: 1px solid var(--text-muted);
+  cursor: pointer;
+}
+.dropdown-menu p:hover{
+  background-color: var(--bg-tertiary);
+}
+.dropdown-menu p:last-child {
+  border: none;
 }
