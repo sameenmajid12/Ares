@@ -9,11 +9,11 @@ import { Login } from './pages/login/login';
 import { Signup } from './pages/signup/signup';
 
 export const routes: Routes = [
+  {path:'', redirectTo:'login', pathMatch:"full"},
   {
     path: '',
     component: MainLayout,
     children: [
-      { path: '', component: Dashboard },
       {
         path: 'dashboard',
         component: Dashboard,
