@@ -8,7 +8,7 @@
   border-radius: 2rem;
   box-sizing: border-box;
   row-gap: 1rem;
-  min-width: 32rem;
+  width: 32rem;
   position: relative;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.25);
 }
@@ -61,6 +61,16 @@
   height: 2.5rem;
   border-radius: 0.5rem;
   border: none;
+  transition: all 0.1s ease;
+}
+.auth-form-wrapper button:disabled{
+  color:var(--bg-tertiary);
+}
+.auth-form-wrapper button:disabled:hover{
+  box-shadow: none;
+}
+.auth-form-wrapper button:hover {
+  box-shadow: 0px 0px 4px var(--text-primary);
 }
 .no-account-message{
   width: 100%;

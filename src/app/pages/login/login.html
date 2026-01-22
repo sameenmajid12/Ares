@@ -5,33 +5,39 @@
       <h2>Login</h2>
       <h4>Start trading assets today</h4>
     </div>
-    <div class="auth-form-wrapper">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form-wrapper">
       <div class="auth-form-item">
         <p>Email</p>
         <input
-          [value]="auth.email()"
-          (input)="auth.email.set($any($event.target).value)"
+          formControlName="email"
           appInputError
-          [error]="!auth.isEmailValid() && auth.touched()"
+          [error]="emailValid"
         />
+        @if(loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched){
+        <span class="error-message">Email required</span>
+        } @else if(loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched){
+        <span class="error-message">Please enter a valid email</span>}
       </div>
       <div class="auth-form-item">
         <p>Password</p>
         <input
           type="password"
-          [value]="auth.password()"
-          (input)="auth.password.set($any($event.target).value)"
+          formControlName="password"
           appInputError
-          [error]="!auth.isPasswordValid() && auth.touched()"
-        />
+          [error]="passwordValid"/>
+        @if(loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched){
+        <span class="error-message">Password required</span>
+        } @else if(loginForm.get('password')?.errors?.['pattern'] && loginForm.get('password')?.touched){
+        <span class="error-message">Password should be at least 8 characters with 1 number</span>
+        }
       </div>
       <hr class="line" />
-      <button (click)="auth.login()">Login</button>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
       <div class="no-account-message">
         <p>
           Don't have an account? <span routerLink="/signup"><a>Register</a></span>
         </p>
       </div>
-    </div>
+    </form>
   </div>
 </div>
