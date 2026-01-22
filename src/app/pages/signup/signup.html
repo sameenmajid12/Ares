@@ -5,44 +5,50 @@
       <h2>Register</h2>
       <h4>Create an account today</h4>
     </div>
-    <div class="auth-form-wrapper">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="auth-form-wrapper">
       <div class="auth-form-item">
         <p>Email</p>
-        <input
-          type="email"
-          [value]="auth.email()"
-          (input)="auth.email.set($any($event.target).value)"
-          appInputError
-          [error]="!auth.isEmailValid() && auth.touched()"
-        />
+        <input type="email" formControlName="email" appInputError [error]="emailValid" />
+        @if(signupForm.get('email')?.errors?.['required'] && signupForm.get('email')?.touched){
+        <span class="error-message">Email required</span>
+        } @else if(signupForm.get('email')?.errors?.['email'] && signupForm.get('email')?.touched){
+        <span class="error-message">Please enter a valid email</span>
+        }
       </div>
       <div class="auth-form-item">
         <p>Password</p>
-        <input
-          type="password"
-          [value]="auth.password()"
-          (input)="auth.password.set($any($event.target).value)"
-          appInputError
-          [error]="!auth.isPasswordValid() && auth.touched()"
-        />
+        <input type="password" formControlName="password" appInputError [error]="passwordValid" />
+        @if(signupForm.get('password')?.errors?.['required'] &&
+        signupForm.get('password')?.touched){
+        <span class="error-message">Password required</span>
+        } @else if(signupForm.get('password')?.errors?.['pattern'] &&
+        signupForm.get('password')?.touched){
+        <span class="error-message">Password must contain at least 8 characters with 1 number</span>
+        }
       </div>
       <div class="auth-form-item">
         <p>Retype password</p>
         <input
           type="password"
-          [value]="auth.retypedPassword()"
-          (input)="auth.retypedPassword.set($any($event.target).value)"
+          formControlName="retypedPassword"
           appInputError
-          [error]="!auth.isPasswordMatch() && auth.touched()"
+          [error]="retypedPasswordValid"
         />
+        @if(signupForm.get('retypedPassword')?.errors?.['required'] &&
+        signupForm.get('retypedPassword')?.touched){
+        <span class="error-message">Please retype password</span>
+        } @else if(signupForm.errors?.['passwordMismatch'] &&
+        signupForm.get('retypedPassword')?.touched){
+        <span class="error-message">Password does not match</span>
+        }
       </div>
       <hr class="line" />
-      <button (click)="auth.register()">Register</button>
+      <button [disabled]="this.signupForm.invalid" type="submit">Register</button>
       <div class="has-account-message">
         <p>
           Already have an account? <span routerLink="/login"><a>Login</a></span>
         </p>
       </div>
-    </div>
+    </form>
   </div>
 </div>
