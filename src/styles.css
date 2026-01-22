@@ -1,22 +1,25 @@
 :root {
-  --bg-primary: #0b1220;
-  --bg-secondary: #111827;
-  --bg-tertiary: #1f2937;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
 
-  --text-primary: #e5e7eb;
-  --text-muted: #9ca3af;
+  --text-primary: #333;
+  --text-muted: #A8A8A8;
 
-  --accent-main: #2563eb;
+  --accent-main: #3272fc;
+  --accent-main-muted: #79a2fc;
   --accent-good: #16a34a;
   --accent-warn: #f59e0b;
   --accent-bad: #dc2626;
+  --border-main: #b6b6b6ee;
+  --border-subtle: #e2e8f0;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 
-  --border-subtle: #374151;
   --page-padding: 2.5rem 4rem;
 }
 
 html {
-  font-family: monospace;
+  font-family: "IBM Plex Mono";
 }
 body {
   background-color: var(--bg-primary);
@@ -41,6 +44,7 @@ button {
   flex-direction: column;
   row-gap: 2rem;
 }
-.error-message{
-  color:var(--accent-bad);
+.error-message {
+  color: var(--accent-bad);
+  font-size: 0.75rem;
 }
