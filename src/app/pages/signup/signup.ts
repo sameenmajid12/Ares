@@ -8,7 +8,7 @@ import { passwordMatchValidator } from '../../validators/password-match.validato
   selector: 'app-signup',
   imports: [RouterLink, InputError, ReactiveFormsModule],
   templateUrl: './signup.html',
-  styleUrl: './signup.css',
+  styleUrls: ['./signup.css', '../../styles/auth-form.styles.css'],
 })
 export class Signup {
   formBuilder = inject(FormBuilder);

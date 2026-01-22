@@ -7,7 +7,7 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
   selector: 'app-login',
   imports: [RouterLink, InputError, ReactiveFormsModule],
   templateUrl: './login.html',
-  styleUrl: './login.css',
+  styleUrls: ['./login.css', '../../styles/auth-form.styles.css'],
 })
 export class Login {
   private formBuilder = inject(FormBuilder);
