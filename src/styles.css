@@ -41,3 +41,6 @@ button {
   flex-direction: column;
   row-gap: 2rem;
 }
+.error-message{
+  color:var(--accent-bad);
+}
